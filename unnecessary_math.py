@@ -1,8 +1,6 @@
 '''
-Module showing how doctests can be included with source code
-Each '>>>' line is run as if in a python shell, and counts as a test.
-The next line, if not '>>>' is the expected output of the previous line.
-If anything doesn't match exactly (including trailing spaces), the test fails.
+La función muestra como el código se ejecuta, qué espera y cuál es su salida. En caso de que
+no coincida, la prueba fallará
 '''
 def multiply(a, b):
     """

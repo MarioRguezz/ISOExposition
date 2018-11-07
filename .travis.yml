@@ -3,3 +3,4 @@ python:
 - 3.6.1
 script:
 - python -m doctest -v  unnecessary_math.py
+- python test_um_unittest.py
