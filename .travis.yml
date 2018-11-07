@@ -9,8 +9,11 @@ jobs:
   include:
   - stage: test
     script:
-     - python -m doctest -v  unnecessary_math.py
+     - python test_um_unittest.py
   - stage: prod
     script:
-      - python test_um_unittest.py
-
+     - python -m doctest -v  unnecessary_math.py
+notifications: 
+email:
+  on_failure: change
+  on_success: change
