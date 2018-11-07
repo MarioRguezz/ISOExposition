@@ -5,6 +5,11 @@ branches:
   only:
   - test
   - prod
+stages:
+- name: test
+  if: branch = test
+- name: prod
+if: branch = prod
 jobs:
   include:
   - stage: test
