@@ -1,0 +1,5 @@
+language: python
+python:
+- 3.6.1
+script:
+- python -m doctest -v  unnecessary_math.py
