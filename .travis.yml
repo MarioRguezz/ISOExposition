@@ -5,16 +5,28 @@ branches:
   only:
   - test
   - prod
+  - coverage
+
+
+
 stages:
 - name: test
   if: branch = test
 - name: prod
-if: branch = prod
+  if: branch = prod
+- name: coverage
+  if: branch = coverage
 jobs:
   include:
   - stage: test
     script:
      - python test_um_unittest.py
+  - stage: coverage
+    script:
+     - pip install coverage
+     - pip install pytest-cov
+     - coverage run -m py.test test.py
+     - coverage report -m
   - stage: prod
     script:
      - python -m doctest -v  unnecessary_math.py
